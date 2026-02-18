@@ -1,0 +1,7 @@
+{
+  "races": {
+    "orc": 60,
+    "human": 20,
+    "undead": 20
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(echo:*)",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\martin.zovinec\\\\.claude\\\\wc3_accept.ps1\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\martin.zovinec\\\\.claude\\\\wc3_ask.ps1\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\martin.zovinec\\\\.claude\\\\wc3_complete.ps1\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"Test-Path ''C:\\\\Sources_git\\\\sideprojects\\\\claude_wc\\\\warcraft3-claude-code-sound-hook\\\\sounds\\\\orc\\\\accept\\\\PeonWhat1.wav''\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"Test-Path ''C:\\\\Users\\\\martin.zovinec\\\\.claude\\\\wc3_accept.ps1''\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\martin.zovinec\\\\.claude\\\\wc3_debug.ps1\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\martin.zovinec\\\\.claude\\\\wc3_debug_mp3.ps1\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\martin.zovinec\\\\.claude\\\\wc3_debug_mci.ps1\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\martin.zovinec\\\\.claude\\\\wc3_setup.ps1\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"c:\\\\Sources_git\\\\sideprojects\\\\claude_wc\\\\warcraft3-claude-code-sound-hook\\\\build_zip.ps1\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"c:\\\\Sources_git\\\\sideprojects\\\\claude_wc\\\\warcraft3-claude-code-sound-hook\\\\build_single_installer.ps1\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"try { [System.Management.Automation.Language.Parser]::ParseFile\\(''c:\\\\Sources_git\\\\sideprojects\\\\claude_wc\\\\warcraft3-claude-code-sound-hook\\\\install_windows_standalone.ps1'', [ref]$null, [ref]$null\\) | Out-Null; Write-Host ''Syntax OK'' } catch { Write-Host \"\"Error: $_\" }\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"c:\\\\Sources_git\\\\sideprojects\\\\claude_wc\\\\warcraft3-claude-code-sound-hook\\\\validate.ps1\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\martin.zovinec\\\\.claude\\\\wc3_copy_undead.ps1\")"
+    ]
+  }
+}
