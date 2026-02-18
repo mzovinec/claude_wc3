@@ -35,7 +35,7 @@ Edit `~/.claude/wc3_config.json` to change race weights:
 }
 ```
 
-Numbers are relative weights — they don't need to sum to 100. Add `"nightelf": 10` to include Night Elf wisps. Set a race to `0` to disable it. Re-running the installer preserves your config.
+Numbers are relative weights — they don't need to sum to 100. 
 
 ## Sound files
 
@@ -44,7 +44,6 @@ Numbers are relative weights — they don't need to sum to 100. Add `"nightelf":
 | **Orc** (Peon) | *"Something need doing?"*, *"What you want?"* ... (8 clips) | *"What?"* lines (4 clips) | *"Work complete"* |
 | **Human** (Peasant) | *"Yes, milord"*, *"More work?"* ... (8 clips) | *"What?"* lines (4 clips) | *"Job's done"* |
 | **Undead** (Acolyte) | *"I wish only to serve"*, *"Thy bidding, master?"* ... (9 clips) | *"What?"* lines (5 clips) | *"Ready to serve"* |
-| **Night Elf** (Wisp) | *(mystical wisp sounds)* (6 clips) | *(wisp sounds)* (3 clips) | *(wisp ready sound)* |
 
 ## How it works
 
