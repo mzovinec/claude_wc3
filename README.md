@@ -28,9 +28,10 @@ Edit `~/.claude/wc3_config.json` to change race weights:
 ```json
 {
   "races": {
-    "orc": 60,
+    "orc": 30,
     "human": 20,
-    "undead": 20
+    "undead": 20,
+    "czech_human": 30
   }
 }
 ```
@@ -44,6 +45,7 @@ Numbers are relative weights — they don't need to sum to 100.
 | **Orc** (Peon) | *"Something need doing?"*, *"What you want?"* ... (8 clips) | *"What?"* lines (4 clips) | *"Work complete"* |
 | **Human** (Peasant) | *"Yes, milord"*, *"More work?"* ... (8 clips) | *"What?"* lines (4 clips) | *"Job's done"* |
 | **Undead** (Acolyte) | *"I wish only to serve"*, *"Thy bidding, master?"* ... (9 clips) | *"What?"* lines (5 clips) | *"Ready to serve"* |
+| **Czech Human** (Peasant) | Czech voice lines | Czech voice lines | *Uses English human complete sounds* |
 
 ## How it works
 

@@ -1,7 +1,8 @@
 {
   "races": {
-    "orc": 60,
+    "orc": 30,
     "human": 20,
-    "undead": 20
+    "undead": 20,
+    "czech_human": 30
   }
 }

@@ -22,7 +22,13 @@ if (Test-Path $RaceFile) {
 }
 
 # Play a random complete sound from that race
-$Dir = Join-Path $SoundsDir "$Race\complete"
+# If czech_human, use human complete sounds instead (czech has no complete folder)
+$CompleteRace = $Race
+if ($Race -eq "czech_human") {
+    $CompleteRace = "human"
+}
+
+$Dir = Join-Path $SoundsDir "$CompleteRace\complete"
 $Files = Get-ChildItem -Path "$Dir\*" -Include *.wav, *.mp3 -File -ErrorAction SilentlyContinue
 if ($Files.Count -gt 0) {
     $Sound = ($Files | Get-Random).FullName
