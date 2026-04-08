@@ -9,15 +9,33 @@ $ConfigFile = Join-Path $PSScriptRoot "wc3_config.json"
 if (Test-Path $RaceFile) {
     $Race = (Get-Content $RaceFile -Raw).Trim()
 } else {
+    # Two-level weighted selection: game first, then race
     $config = Get-Content $ConfigFile -Raw | ConvertFrom-Json
-    $total = 0
-    foreach ($prop in $config.races.PSObject.Properties) { $total += $prop.Value }
-    $Roll = Get-Random -Minimum 1 -Maximum ($total + 1)
+    $gameTotal = 0
+    foreach ($g in $config.games.PSObject.Properties) {
+        if ($g.Value.weight -gt 0) { $gameTotal += $g.Value.weight }
+    }
+    if ($gameTotal -eq 0) { exit }
+
+    $roll = Get-Random -Minimum 1 -Maximum ($gameTotal + 1)
     $cumulative = 0
-    $Race = "orc"
-    foreach ($prop in $config.races.PSObject.Properties) {
-        $cumulative += $prop.Value
-        if ($Roll -le $cumulative) { $Race = $prop.Name; break }
+    $game = $null
+    foreach ($g in $config.games.PSObject.Properties) {
+        if ($g.Value.weight -le 0) { continue }
+        $cumulative += $g.Value.weight
+        if ($roll -le $cumulative) { $game = $g.Value; break }
+    }
+
+    $raceTotal = 0
+    foreach ($r in $game.races.PSObject.Properties) { $raceTotal += $r.Value }
+    if ($raceTotal -eq 0) { exit }
+
+    $roll = Get-Random -Minimum 1 -Maximum ($raceTotal + 1)
+    $cumulative = 0
+    $Race = ($game.races.PSObject.Properties | Select-Object -First 1).Name
+    foreach ($r in $game.races.PSObject.Properties) {
+        $cumulative += $r.Value
+        if ($roll -le $cumulative) { $Race = $r.Name; break }
     }
 }
 

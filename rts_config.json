@@ -1,0 +1,21 @@
+{
+  "games": {
+    "wc3": {
+      "weight": 30,
+      "races": {
+        "orc": 30,
+        "human": 20,
+        "undead": 20,
+        "czech_human": 30
+      }
+    },
+    "g&g": {
+      "weight": 70,
+      "races": {
+        "China_Dozer": 30,
+        "GLA_Worker": 40,
+        "USA_Dozer": 30
+      }
+    }
+  }
+}

@@ -13,13 +13,37 @@ $SoundsDestDir = Join-Path $ClaudeDir "wc3sounds"
 Write-Host "Copying sound files to $SoundsDestDir ..."
 if (Test-Path $SoundsDestDir) { Remove-Item $SoundsDestDir -Recurse -Force }
 $SoundsSourceDir = Join-Path $ScriptDir "sounds"
-foreach ($raceDir in Get-ChildItem $SoundsSourceDir -Directory) {
-    foreach ($type in @("accept", "ask", "complete")) {
-        $src = Join-Path $raceDir.FullName $type
-        $dst = Join-Path $SoundsDestDir "$($raceDir.Name)\$type"
-        if (Test-Path $src) {
-            New-Item -ItemType Directory -Path $dst -Force | Out-Null
-            Copy-Item "$src\*" $dst -Force
+
+# G&G folder-to-hook mappings: G&G folder name -> hook category
+$GnGAcceptFolders = @("Move", "Build", "Repair", "ClearMine", "Crush")
+$GnGAskFolders    = @("Select")
+$GnGCompleteFolders = @("BuildComplete")
+
+foreach ($gameDir in Get-ChildItem $SoundsSourceDir -Directory) {
+    foreach ($raceDir in Get-ChildItem $gameDir.FullName -Directory) {
+        if ($gameDir.Name -eq "wc3") {
+            # WC3: copy accept/ask/complete directly
+            foreach ($type in @("accept", "ask", "complete")) {
+                $src = Join-Path $raceDir.FullName $type
+                $dst = Join-Path $SoundsDestDir "$($raceDir.Name)\$type"
+                if (Test-Path $src) {
+                    New-Item -ItemType Directory -Path $dst -Force | Out-Null
+                    Copy-Item "$src\*" $dst -Force
+                }
+            }
+        } elseif ($gameDir.Name -eq "g&g") {
+            # G&G: map Select->ask, Move/Build/etc->accept, BuildComplete->complete
+            foreach ($subDir in Get-ChildItem $raceDir.FullName -Directory) {
+                $hookType = $null
+                if ($GnGAcceptFolders -contains $subDir.Name) { $hookType = "accept" }
+                elseif ($GnGAskFolders -contains $subDir.Name) { $hookType = "ask" }
+                elseif ($GnGCompleteFolders -contains $subDir.Name) { $hookType = "complete" }
+                if ($hookType) {
+                    $dst = Join-Path $SoundsDestDir "$($raceDir.Name)\$hookType"
+                    New-Item -ItemType Directory -Path $dst -Force | Out-Null
+                    Copy-Item "$($subDir.FullName)\*" $dst -Force
+                }
+            }
         }
     }
 }

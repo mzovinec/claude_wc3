@@ -16,7 +16,14 @@
       "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"c:\\\\Sources_git\\\\sideprojects\\\\claude_wc\\\\warcraft3-claude-code-sound-hook\\\\build_single_installer.ps1\")",
       "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"try { [System.Management.Automation.Language.Parser]::ParseFile\\(''c:\\\\Sources_git\\\\sideprojects\\\\claude_wc\\\\warcraft3-claude-code-sound-hook\\\\install_windows_standalone.ps1'', [ref]$null, [ref]$null\\) | Out-Null; Write-Host ''Syntax OK'' } catch { Write-Host \"\"Error: $_\" }\")",
       "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"c:\\\\Sources_git\\\\sideprojects\\\\claude_wc\\\\warcraft3-claude-code-sound-hook\\\\validate.ps1\")",
-      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\martin.zovinec\\\\.claude\\\\wc3_copy_undead.ps1\")"
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\martin.zovinec\\\\.claude\\\\wc3_copy_undead.ps1\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File install_windows.ps1)",
+      "Read(//c/Users/mzovi/.claude/wc3sounds/China_Dozer/**)",
+      "Read(//c/Users/mzovi/.claude/wc3sounds/GLA_Worker/**)",
+      "Read(//c/Users/mzovi/.claude/wc3sounds/USA_Dozer/**)",
+      "Read(//c/Users/mzovi/.claude/wc3sounds/GLA_Worker/accept/**)",
+      "Read(//c/Users/mzovi/.claude/wc3sounds/GLA_Worker/ask/**)",
+      "Read(//c/Users/mzovi/.claude/wc3sounds/GLA_Worker/complete/**)"
     ]
   }
 }
