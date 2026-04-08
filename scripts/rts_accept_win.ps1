@@ -1,10 +1,10 @@
-# WC3 Worker Accept Command Sound (Windows)
+# RTS Accept Command Sound (Windows)
 # Randomly picks a game (weighted), then a race within it, and plays an "accept" voice line
 # Saves the chosen race so ask/complete hooks use the same race
 
-$SoundsDir = Join-Path $PSScriptRoot "wc3sounds"
-$RaceFile = Join-Path $env:TEMP "wc3_current_race.txt"
-$ConfigFile = Join-Path $PSScriptRoot "wc3_config.json"
+$SoundsDir = Join-Path $PSScriptRoot "rtssounds"
+$RaceFile = Join-Path $env:TEMP "rts_current_race.txt"
+$ConfigFile = Join-Path $PSScriptRoot "rts_config.json"
 
 # Two-level weighted selection: game first, then race
 $config = Get-Content $ConfigFile -Raw | ConvertFrom-Json
@@ -45,5 +45,5 @@ $Dir = Join-Path $SoundsDir "$Race\accept"
 $Files = Get-ChildItem -Path "$Dir\*" -Include *.wav, *.mp3 -File -ErrorAction SilentlyContinue
 if ($Files.Count -gt 0) {
     $Sound = ($Files | Get-Random).FullName
-    & (Join-Path $PSScriptRoot "wc3_play_win.ps1") $Sound
+    & (Join-Path $PSScriptRoot "rts_play_win.ps1") $Sound
 }

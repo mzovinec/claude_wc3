@@ -1,4 +1,4 @@
-# WC3 Sound Player (Windows)
+# RTS Sound Player (Windows)
 # Plays a WAV or MP3 file. Used by the accept/ask/complete scripts.
 param([string]$SoundFile)
 
@@ -17,7 +17,7 @@ public class WinMM {
 }
 "@
     $sb = New-Object System.Text.StringBuilder 256
-    [WinMM]::mciSendString("open `"$SoundFile`" type mpegvideo alias wc3sound", $sb, 256, [IntPtr]::Zero) | Out-Null
-    [WinMM]::mciSendString("play wc3sound wait", $sb, 256, [IntPtr]::Zero) | Out-Null
-    [WinMM]::mciSendString("close wc3sound", $sb, 256, [IntPtr]::Zero) | Out-Null
+    [WinMM]::mciSendString("open `"$SoundFile`" type mpegvideo alias rtssound", $sb, 256, [IntPtr]::Zero) | Out-Null
+    [WinMM]::mciSendString("play rtssound wait", $sb, 256, [IntPtr]::Zero) | Out-Null
+    [WinMM]::mciSendString("close rtssound", $sb, 256, [IntPtr]::Zero) | Out-Null
 }

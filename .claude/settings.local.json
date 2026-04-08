@@ -23,7 +23,11 @@
       "Read(//c/Users/mzovi/.claude/wc3sounds/USA_Dozer/**)",
       "Read(//c/Users/mzovi/.claude/wc3sounds/GLA_Worker/accept/**)",
       "Read(//c/Users/mzovi/.claude/wc3sounds/GLA_Worker/ask/**)",
-      "Read(//c/Users/mzovi/.claude/wc3sounds/GLA_Worker/complete/**)"
+      "Read(//c/Users/mzovi/.claude/wc3sounds/GLA_Worker/complete/**)",
+      "Bash(rm -f ~/.claude/wc3_accept_win.ps1 ~/.claude/wc3_ask_win.ps1 ~/.claude/wc3_complete_win.ps1 ~/.claude/wc3_play_win.ps1 ~/.claude/wc3_config.json)",
+      "Bash(rm -rf ~/.claude/wc3sounds/)",
+      "Bash(ls ~/.claude/rts_*.ps1)",
+      "Bash(python -m json.tool)"
     ]
   }
 }
